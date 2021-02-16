@@ -58,7 +58,7 @@ class MainViewController: UIViewController, WordManagerDelegate {
         }
 
         let alertVC = UIAlertController(title: "Translation", message: "\(longString)", preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .destructive, handler: nil))
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alertVC, animated: true)
     }
     
