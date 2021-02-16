@@ -15,6 +15,7 @@
 		A23087E225DB9E7100214383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A23087E025DB9E7100214383 /* LaunchScreen.storyboard */; };
 		A23087ED25DBB66200214383 /* WordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23087EC25DBB66200214383 /* WordManager.swift */; };
 		A23087EF25DBB86C00214383 /* WordData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23087EE25DBB86C00214383 /* WordData.swift */; };
+		A23087F125DBC38C00214383 /* WordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23087F025DBC38C00214383 /* WordModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A23087E325DB9E7100214383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A23087EC25DBB66200214383 /* WordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordManager.swift; sourceTree = "<group>"; };
 		A23087EE25DBB86C00214383 /* WordData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordData.swift; sourceTree = "<group>"; };
+		A23087F025DBC38C00214383 /* WordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				A23087EC25DBB66200214383 /* WordManager.swift */,
 				A23087EE25DBB86C00214383 /* WordData.swift */,
+				A23087F025DBC38C00214383 /* WordModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A23087DA25DB9E6F00214383 /* MainViewController.swift in Sources */,
+				A23087F125DBC38C00214383 /* WordModel.swift in Sources */,
 				A23087D625DB9E6F00214383 /* AppDelegate.swift in Sources */,
 				A23087D825DB9E6F00214383 /* SceneDelegate.swift in Sources */,
 				A23087EF25DBB86C00214383 /* WordData.swift in Sources */,

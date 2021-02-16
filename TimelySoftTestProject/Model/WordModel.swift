@@ -1,5 +1,5 @@
 //
-//  WordData.swift
+//  WordModel.swift
 //  TimelySoftTestProject
 //
 //  Created by Syimyk on 2/16/21.
@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct WordData : Codable{
-    let translation : String
-    let originalWord : String
+struct WordModel {
+    var originalWord : String
+    var translatedWord : String
 }

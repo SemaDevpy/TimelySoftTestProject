@@ -9,7 +9,11 @@
 import UIKit
 
 class MainViewController: UIViewController, WordManagerDelegate {
+
     
+  
+
+    let defaults = UserDefaults.standard
     
     var wordManager = WordManager()
     
@@ -43,29 +47,45 @@ class MainViewController: UIViewController, WordManagerDelegate {
             textField.placeholder = "Please enter a word..."
         }
     }
+    
+    
     @IBAction func showFullMessageBtnTapped(_ sender: UIButton) {
-        
+        var longString = ""
+        for item in listOfWords{
+            if let newItem = defaults.string(forKey: item){
+                longString.append(" \(newItem)")
+            }
+        }
+
+        let alertVC = UIAlertController(title: "Translation", message: "\(longString)", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .destructive, handler: nil))
+        self.present(alertVC, animated: true)
     }
     
     
     
     
-    func didTranslate(_ wordManager: WordManager, translatedWord: String) {
+    func didTranslate(_ wordManager: WordManager, wordModel: WordModel) {
         DispatchQueue.main.async {
-            let alertVC = UIAlertController(title: "Tranlation", message: translatedWord, preferredStyle: .alert)
+            let alertVC = UIAlertController(title: "Tranlation", message: wordModel.translatedWord, preferredStyle: .alert)
             alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            //adding to UserDefaults
+            self.defaults.set(wordModel.translatedWord, forKey: wordModel.originalWord)
+            
+            
             self.present(alertVC, animated: true)
         }
         
     }
     
-    func didFailWithError(error: Error) {
+    func didFailWithError(error: Error, noTranslateWord: String) {
         DispatchQueue.main.async {
-            let alertVC = UIAlertController(title: "Error", message: "No Translaation For This Word", preferredStyle: .alert)
+            self.listOfWords.removeAll { $0 == noTranslateWord }
+
+            let alertVC = UIAlertController(title: "Error", message: "No Translation For \(noTranslateWord)", preferredStyle: .alert)
             alertVC.addAction(UIAlertAction(title: "OK", style: .destructive, handler: nil))
             self.present(alertVC, animated: true)
-            
-            self.listOfWords.removeLast()
+
             self.tableView.reloadData()
         }
         
